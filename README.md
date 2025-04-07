@@ -48,16 +48,16 @@ Double click the robot to show the robot panel Select Paint gun as the Tool Fram
 Rename the first target as Home by pressing F2. Alternatively, select ToolsRename item. Move the robot closer to one edge of the part (by dragging the tool using the Alt key, entering coordinates or jogging the axis manually) In this example we used the following robot joint coordinates [0,0,200,180,0,180] deg. Select Program Teach Target (Ctrl+T) or the appropriate button in the toolbar to create a new target Rename the target to Approach as shown in step 7 Select the Home target and the Approach target alternatively to see the robot moving between the two targets Right click the target and select Teach Current Position (Alt+double click) if a different position needs to be recorded for one of the targets Right click the target and select Target Options… (F3) to open the target options window shown in the next image
 
 ### PROGRAM 
-
 RoboDK Python Intermediate file to generate robot programs.
-Program name: MainProgram
-This file requires the post processor: 
+ Program name: MainProgram
+ This file requires the post processor: 
   Doosan
 to generate your robot program.
 This is a temporary file and you can delete it once you have generated your program.
+ 
 Post processor documentation: https://robodk.com/doc/en/PythonAPI/postprocessor.html
 
-import sys
+```import sys
 import os
 sys.path.append(os.path.abspath(r"""C:/RoboDK/Posts/""")) # temporarily add path to POSTS folder
 
@@ -98,6 +98,7 @@ r.ProgStart(r"""placepart2""")
 r.setFrame(p(500,200,0,0,0,0),-1,r"""part2""")
 r.MoveJ(p(0,0,200,90,-0.092,179.745),[25.4877,7.01322,117.517,-0.0324971,55.2,115.506],[0,0,0])
 r.MoveL(p(0,0,85,90,-0.092,179.745),[25.4877,15.1226,122.818,-0.0400439,41.7893,115.518],[0,0,0])
+```
 ### Simultation:
 ![Screenshot 2025-04-07 133808](https://github.com/user-attachments/assets/ce73e3f6-c7cd-4565-8a77-f1cfa113a8a1)
 
